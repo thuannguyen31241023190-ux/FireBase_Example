@@ -43,3 +43,11 @@ dependencies {
   androidTestImplementation(libs.ext.junit)
   androidTestImplementation(libs.espresso.core)
 }
+
+dependencies {
+  // ... các thư viện hiện có của bạn ...
+
+  // Thư viện Glide để tải ảnh từ URL
+  implementation("com.github.bumptech.glide:glide:4.16.0")
+  annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+}

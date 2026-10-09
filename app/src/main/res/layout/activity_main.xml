@@ -1,81 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="20dp"
+    android:background="#F8F9FA">
 
-  <EditText
-    android:id="@+id/etPhone"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:ems="10"
-    android:inputType="phone"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.409"
-    app:layout_constraintStart_toEndOf="@+id/textView3"
-    app:layout_constraintTop_toBottomOf="@+id/etName" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
-  <TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="56dp"
-    android:layout_marginTop="200dp"
-    android:text="Name"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm Bài Viết Mới"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#212529"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
 
-  <EditText
-    android:id="@+id/etName"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="36dp"
-    android:layout_marginTop="184dp"
-    android:ems="10"
-    android:inputType="text"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.138"
-    app:layout_constraintStart_toEndOf="@+id/textView"
-    app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/edtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiêu đề bài viết (Title)"
+        android:inputType="textPersonName"
+        android:padding="14dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="16dp" />
 
-  <TextView
-    android:id="@+id/textView3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="56dp"
-    android:layout_marginTop="60dp"
-    android:text="Phone"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <EditText
+        android:id="@+id/edtContent"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Nội dung bài viết (Content)"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:padding="14dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="16dp" />
 
-  <Button
-    android:id="@+id/btAdd"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="76dp"
-    android:layout_marginTop="68dp"
-    android:text="Add"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView3"
-    app:layout_constraintVertical_bias="0.17" />
+    <EditText
+        android:id="@+id/edtImageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL Hình ảnh (image_url)"
+        android:inputType="textUri"
+        android:padding="14dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="24dp" />
 
-  <Button
-    android:id="@+id/btShow"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="64dp"
-    android:layout_marginTop="68dp"
-    android:text="Show DB"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toEndOf="@+id/btAdd"
-    app:layout_constraintTop_toBottomOf="@+id/textView3"
-    app:layout_constraintVertical_bias="0.17" />
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu Bài Viết"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="#0D6EFD"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnShowData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xem Danh Sách Bài Viết"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="#198754"
+        android:textColor="#FFFFFF" />
+
+  </LinearLayout>
+</ScrollView>
