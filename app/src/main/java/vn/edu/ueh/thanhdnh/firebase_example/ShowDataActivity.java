@@ -12,7 +12,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ShowDataActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -47,14 +46,13 @@ public class ShowDataActivity extends AppCompatActivity {
             if (snapshots != null) {
                 articles.clear();
                 for (DocumentSnapshot doc : snapshots.getDocuments()) {
-                    Map<String, Object> data = doc.getData();
-                    if (data != null) {
-                        String id = doc.getId();
-                        String title = (String) data.get("title");
-                        String content = (String) data.get("content");
-                        String imageUrl = (String) data.get("image_url");
-
-                        articles.add(new Article(id, title, content, imageUrl));
+                    Article article = doc.toObject(Article.class);
+                    if (article != null) {
+                        // Nếu tài liệu cũ trên Firebase chưa có field "id", gán bằng ID của Document
+                        if (article.getId() == null || article.getId().isEmpty()) {
+                            article.setId(doc.getId());
+                        }
+                        articles.add(article);
                     }
                 }
                 adapter.update(articles);
